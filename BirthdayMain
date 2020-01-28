@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string DateBirthday = Convert.ToString(DateTime.Today);
+           
+            Console.Write("Please write your Data Birthday (DD/MM/YYYY):");
+            string DateToday = Console.ReadLine().ToString();
+            int yourAge = DateTime.Parse(DateBirthday).Year - (DateTime.Parse(DateToday)).Year;
+            Console.WriteLine("Your age: " + yourAge);
+            Console.Read();
+
+            if (DateToday.Substring(0, 5) == DateBirthday.Substring(0,5))
+            {
+                Console.WriteLine("Hey!!");
+                Console.Read();
+
+                if (yourAge < 40)
+                {
+                    Console.WriteLine("Congrats on your Birthday");
+                    Console.Read();
+                }
+                   
+                else
+                {
+                    Console.WriteLine("Sorry mate, it's your Birthday");
+                    Console.Read();
+                }
+            } 
+        }
+    }
+}
